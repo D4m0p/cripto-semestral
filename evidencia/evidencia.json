@@ -1,0 +1,574 @@
+{
+ "0": {
+  "contract": "0x0E7fE86d0E8f57C332FD02C58BF6Ff4113dda390",
+  "flag": "57246293100111435626315339879288739952",
+  "flagOK": true,
+  "notes": [],
+  "txs": [
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0xade4c56e2c2268582412de91c09d66640d7dcc215d7ace12df571c0eeb3b5a77",
+    "block": 107,
+    "gasUsed": 58844,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "1": {
+  "contract": "0x030285AB68aF36f9BD99F5A7B75ce75781810591",
+  "flag": "293413422063513091946941073101578135342",
+  "flagOK": true,
+  "notes": [],
+  "txs": [
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0xda3587001f427a8ca522b35650a8a9e77be4ba3cafe55b2578f35ac65b0bcbe1",
+    "block": 110,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "2": {
+  "contract": "0x996A7d505dB29DF78Ae1A72205955cCe0aa7FEE2",
+  "flag": "221802269127747826203948297248158244131",
+  "flagOK": true,
+  "notes": [
+   "numero secreto leido del slot 1: 2"
+  ],
+  "txs": [
+   {
+    "label": "darAlta()",
+    "hash": "0xe3c4b4cf8a5aaba4ebfda4b600411acfb5794e52a49cf1188bc76cf598b0389d",
+    "block": 113,
+    "gasUsed": 43496,
+    "status": 1,
+    "valueWei": 1000000000000,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "cambioPropiedad(2)",
+    "hash": "0x02d0e16fe2fe6cc8293b58d5c7ab36ae203af842f6a8f0c2d98e783b3fb72dad",
+    "block": 114,
+    "gasUsed": 33260,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x582a1f3d4519ceea0c932a85c50f8db61e016f93a852593208209e900c4b4153",
+    "block": 115,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "3": {
+  "contract": "0x70F52e894bc9Ba0807D43837fD93cF79F8BC1c2d",
+  "flag": "35813582608173166724363504644592126111",
+  "flagOK": true,
+  "notes": [],
+  "txs": [
+   {
+    "label": "safeguard(x, secret)",
+    "hash": "0xffd0faaafa56c4cdbfd001f9e00060d2749cb50ce23cacac83f3a394f7ff8eb2",
+    "block": 119,
+    "gasUsed": 44623,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x441d700206a6c0aee8fc101a191fc3916f1f343c33b43e9d2c2138800603ebdd",
+    "block": 120,
+    "gasUsed": 58844,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "4": {
+  "contract": "0x2FC2Da7071139BaF1bB293779B2797E04A3032DD",
+  "flag": "41274064292323631194460780304000612558",
+  "flagOK": true,
+  "notes": [
+   "servidor: Transaction done! Parece que ha ido bien. \u00bfHas conseguido cambiar algo en el Con"
+  ],
+  "txs": [
+   {
+    "label": "despliegue de contrato",
+    "hash": "0xc1a24cc6a865403d9f692cf38ad99ff29c04791e22933e878c2ad72ec503e0dc",
+    "block": 123,
+    "gasUsed": 461683,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x5af60b04f423a346779d748c03fc554c604b1435c4456178a327b187731facd4",
+    "block": 125,
+    "gasUsed": 58844,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "5": {
+  "contract": "0xEa192ba78A778f68a9d48EF5bC9722ac960d39a7",
+  "flag": "47906569181034691578563859409566499785",
+  "flagOK": true,
+  "notes": [
+   "numero secreto leido del slot 3: 33787"
+  ],
+  "txs": [
+   {
+    "label": "pagarBoleto()",
+    "hash": "0x30fdfcae4453df5e12eccd848b26ed402f585fbdda2d48cecc7f423437c67d02",
+    "block": 128,
+    "gasUsed": 66086,
+    "status": 1,
+    "valueWei": 1000000,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "ganarLottery(33787)",
+    "hash": "0xa608653edbe96bc86b5dfb7fbb3fffd49abc530eefebe55a7dc44a34611951c3",
+    "block": 129,
+    "gasUsed": 33793,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x64f922bac1ac43e893946fe0a35e22cf6d8586771ff05ecdefeb2186c24a25b0",
+    "block": 130,
+    "gasUsed": 58844,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "6": {
+  "contract": "0x5CA6b0C09f8240000FB253d64680DB4434BFCEfd",
+  "flag": "321387877240652859954804032119608252921",
+  "flagOK": true,
+  "notes": [
+   "mytokens = 255"
+  ],
+  "txs": [
+   {
+    "label": "burning(1)",
+    "hash": "0x700fcb593bf7998d058672859d1b079a015efb869b3d119157a1f2b262d049e1",
+    "block": 135,
+    "gasUsed": 59184,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0xb51487db66c6a915fa5a678bbb831904032444c179e9429576440448c67050d5",
+    "block": 136,
+    "gasUsed": 58844,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "7": {
+  "contract": "0xE3c87B8f95345CAF16125a0396C5211640797780",
+  "flag": "252443767635918682398563968723815780725",
+  "flagOK": true,
+  "notes": [],
+  "txs": [
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0xb103bd31312968429cee4d7e2b418127d7691f50ba1d6eb7920014c9b8e5d1d9",
+    "block": 140,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "8": {
+  "contract": "0x30438A89Ba80d4E6c63aB68d362CCaD7fb1888c2",
+  "flag": "323695747090177282415127437994788065953",
+  "flagOK": true,
+  "notes": [
+   "stamina inicial = 7",
+   "power = 9"
+  ],
+  "txs": [
+   {
+    "label": "execution_function(b'@\\xca\\xae\\x06')",
+    "hash": "0x1ece979b0a48bf156cb37ff659e7671020c7a66f0f4074532251c21188184f8b",
+    "block": 144,
+    "gasUsed": 32999,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "execution_function(b'Q\\xf2\\xe6J')",
+    "hash": "0x218da4fda2b3c319714ebf1e5aaf7e62ba9524be7d8f82b1fab4e2a0a5fff128",
+    "block": 145,
+    "gasUsed": 33478,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "execution_function(b'\\x94\\x99D:')",
+    "hash": "0x8d2629333a7195a99d9d761c6a77813d0e665bd4acec05104edee234296349fe",
+    "block": 146,
+    "gasUsed": 33522,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "execution_function(b'\\x94\\x99D:')",
+    "hash": "0xc94b3ad2e86836dfaa3976808090aeb5276b822d968d0951efe89735b2e16bba",
+    "block": 147,
+    "gasUsed": 33522,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "execution_function(b'\\x94\\x99D:')",
+    "hash": "0xa37fdf985111b828454b30c563b380b34f945d6f6c547cfbd16d0a1e76cea535",
+    "block": 148,
+    "gasUsed": 33522,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "execution_function(b'\\xcf^\\x974')",
+    "hash": "0xfeec90b407947aed2e6f195a6db15d43ba1643a023e31ac6a8a64346b331c8b0",
+    "block": 149,
+    "gasUsed": 33754,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x7fabe87f46da5f3d4e1f847a924553d6c1c307245857b1898ff63753497312a7",
+    "block": 150,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "9": {
+  "contract": "0xBcc9bFa0fe3b2445644530a6Eb1481DCB97bFfE8",
+  "flag": "236129714664011749584082135376076868255",
+  "flagOK": true,
+  "notes": [],
+  "txs": [
+   {
+    "label": "despliegue de contrato",
+    "hash": "0x898a424f7f8a8109f199a3f05accc91b51dc13cfc020d7e6bc9e44106f0df955",
+    "block": 154,
+    "gasUsed": 699746,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "start(2000000000000000000)",
+    "hash": "0x3c11af10e082846f56ee15151db4c2d18bdc2397d3828eb729a455e577626725",
+    "block": 155,
+    "gasUsed": 149721,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0xe3efc1e5c86271636f38055a230ba31153807f9d83eea913808702dbb4d85100",
+    "block": 156,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "10": {
+  "contract": "0x7e1C8B417C6A2386Db80474466D9F0C76E786048",
+  "flag": "99899102136749379755115977851404361529",
+  "flagOK": true,
+  "notes": [
+   "minimunFee = 3"
+  ],
+  "txs": [
+   {
+    "label": "despliegue de contrato",
+    "hash": "0x2875cf9ab5ad2a1026ac2a59e0e2820640e37da08de244a93aa662b839496efd",
+    "block": 159,
+    "gasUsed": 618434,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "go(0x7e1C8B417C6A2386Db80474466D9F0C76E7860, 1)",
+    "hash": "0xc1ce0fa446c830b1b97c4e5e0f26c944859e5394caa5a54a2506aad5fd0038cb",
+    "block": 160,
+    "gasUsed": 180736,
+    "status": 1,
+    "valueWei": 18,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x339c698c769629c069e970c19f060da36f927d68404b89308cc76eeb6eccd3c2",
+    "block": 161,
+    "gasUsed": 58844,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "11": {
+  "contract": "0x688BfF92bE218bc26a42FF00582dD63aDe4cd3E0",
+  "flag": "165780648192695748749593731007271495490",
+  "flagOK": true,
+  "notes": [
+   "indice secreto leido del slot 3: 1"
+  ],
+  "txs": [
+   {
+    "label": "nostradamus(fd459d96, loveisintheair)",
+    "hash": "0xb8655e15096faeff3eb6f95c415bd85b01f2920edcd6df137abed2bdb9171cd5",
+    "block": 165,
+    "gasUsed": 37451,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x7ce6ed404fdbc9a39ad636a067deace60ba9e15cad3ee4ead116acdc7aa46377",
+    "block": 166,
+    "gasUsed": 58844,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "12": {
+  "contract": "0x9Db7414734A6CBA021685D5a4E8629514E168E03",
+  "flag": "278006288442971143551211639231510921166",
+  "flagOK": true,
+  "notes": [
+   "firma reutilizada del deposito del bloque 168"
+  ],
+  "txs": [
+   {
+    "label": "extractFunds(b'?\\xbd\\xd6\\xb9\\x1c`\\xcb\\xf1\\xbc\\x16B\\xd, 28, b'?!\\xf6\\x81\\x90Z$\\xb7\\x8e\\xbbd\\x8c>\\x94, b'9\\xd2+\\xee\\x87\\xd0\\x91Gx\\x08\\xab#n y\\x)",
+    "hash": "0x5a741ef4f57a9aadf1478aaacbabd4a9a151f35b166a560f5ae5451b30d8cd05",
+    "block": 170,
+    "gasUsed": 37312,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x8cea3d8a79670fb76f5939be5799d781ec033a31d93ee12b07f2ccf09aa6d66d",
+    "block": 171,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "13": {
+  "contract": "0xd0200233Bf1cF8d01A767Fc4185154D95Af395C9",
+  "flag": "320827441580508894202980809510671396282",
+  "flagOK": true,
+  "notes": [
+   "numero secreto leido del slot 1: 2901"
+  ],
+  "txs": [
+   {
+    "label": "execution_function(b'\\x91\\x89\\xfe\\xc1\\x00\\x00\\x00\\x00\\x00\\x)",
+    "hash": "0x89bd6adfba4f502af1269b3dcabcbebe18c94eb67c386a5de3da243e4a39d115",
+    "block": 175,
+    "gasUsed": 35548,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0xdd6753c015a7bc6ac5bf13ce6b23305d2981862e6b41a47dd26ac97a854118dd",
+    "block": 176,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "14": {
+  "contract": "0xA3768999F2867e32780aD9030FEa9925aD54717d",
+  "flag": "224545436284535728012554405144146672530",
+  "flagOK": true,
+  "notes": [],
+  "txs": [
+   {
+    "label": "payMe()",
+    "hash": "0xf763785f43f770e0ba932771b7f87a7d779f39b7ff0d1f55fb13e48f2c6b059e",
+    "block": 179,
+    "gasUsed": 26322,
+    "status": 1,
+    "valueWei": 100000000,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0xbcf34ae473bb2d5784d12e008e478c442ea1c5cec566ec4676e1f1ecf1253fd3",
+    "block": 180,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "15": {
+  "contract": "0xeF49cA7A778924D9B4527eA8Ca4d65617EC89CA2",
+  "flag": "107783868199018496326562527485511404551",
+  "flagOK": true,
+  "notes": [
+   "A = 20  B = 20"
+  ],
+  "txs": [
+   {
+    "label": "mintA(10)",
+    "hash": "0xe4cfb5d2e7cab87ae71a28d4c5b2d97f92fa6393ab8ae8eb86216fed210d6490",
+    "block": 185,
+    "gasUsed": 57173,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "approve(0xeF49cA7A778924D9B4527eA8Ca4d65617EC89C, 10)",
+    "hash": "0xebd429361e15965cf938944006bba427ec1084e9f37baf71a8f642cfc9332acb",
+    "block": 186,
+    "gasUsed": 46851,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "swapAforB(10)",
+    "hash": "0xe34f0a3ac55da58e6ac5b1dec25c92f930e97f2c5047adbcf401b25787e0bf9b",
+    "block": 187,
+    "gasUsed": 103375,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "mintA(20)",
+    "hash": "0xfb7cf6e6b17d94fbf73e1d5a0f6af7bd0c1cd39074302fc502c18e26874536ed",
+    "block": 188,
+    "gasUsed": 57173,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0xe5cd6d087bd21fcdee3df4df78ab653db28df73fae125a367f21fe4c1c4a59d0",
+    "block": 189,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "16": {
+  "contract": "0x0f38F570F48aB91e85B6F1c843Dd96cFBDC9cc40",
+  "flag": "105230478578315709399940067705856846182",
+  "flagOK": true,
+  "notes": [],
+  "txs": [
+   {
+    "label": "add(40, 60)",
+    "hash": "0x31849b6831ab754ef4d87d5e923467c8f6396d627dd0a53a6a5f4a88f32b8c6c",
+    "block": 192,
+    "gasUsed": 29747,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 5.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x2614e1e2403b5052429930bb306490a48ea0d45ba3363a47b8a7ff7c614c093d",
+    "block": 193,
+    "gasUsed": 58856,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ },
+ "17": {
+  "contract": "0x4e787A0cd3387562131376E3a173423c5C400e13",
+  "flag": "92037292474580768689779843617325319613",
+  "flagOK": true,
+  "notes": [
+   "balance del contrato = 10"
+  ],
+  "txs": [
+   {
+    "label": "despliegue de contrato",
+    "hash": "0x0d5d7f2811c41d395ab0c52f26ca5025fbdfcce8f16da8979bd0af493d1da7e0",
+    "block": 196,
+    "gasUsed": 64323,
+    "status": 1,
+    "valueWei": 10,
+    "gasPriceGwei": 2.0
+   },
+   {
+    "label": "validateFlag(contrato, flag)",
+    "hash": "0x2a6d4be572455722668643a2fce4afd5282e9b5c2850ffc35e8a3a0a13879aa5",
+    "block": 197,
+    "gasUsed": 58844,
+    "status": 1,
+    "valueWei": 0,
+    "gasPriceGwei": 2.0
+   }
+  ]
+ }
+}
