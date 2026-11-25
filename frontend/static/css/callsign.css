@@ -49,7 +49,7 @@ a:hover { color: var(--cs-tally); }
 code { color: var(--cs-tally); font-family: var(--cs-mono); font-size: .92em; }
 .text-muted { color: var(--cs-muted) !important; }
 .container.text-center { text-align: center; }
-main { padding: 0 var(--cs-pad); }
+main { padding: 32px var(--cs-pad) 16px; }
 
 h2, h3, .text-gradient, .text-gradient-2 {
   overflow-wrap: anywhere;
