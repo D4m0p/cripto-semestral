@@ -103,6 +103,10 @@ Qué se corrigió:
 
 La carpeta `correcciones/` reúne el trabajo de corregir los contratos vulnerables. Empiece por [`correcciones/GUIA_CORRECCIONES.md`](correcciones/GUIA_CORRECCIONES.md): explica el proceso y, por cada nivel del 9 al 17, el principio de seguridad que se violó, una pista de qué cambiar y cómo comprobar la corrección.
 
+## Informe
+
+`informe/Informe_Semestral_Criptografia.docx` es el esqueleto del documento final: portada, índice, introducción, marco teórico, configuración, resolución de los retos, correcciones, conclusiones y bibliografía. El texto resaltado en amarillo está pendiente de redactar. Al abrirlo en Word, acepte actualizar los campos para que el índice se complete.
+
 ## Referencias
 
 - Telefónica. *Level_Up!* https://github.com/Telefonica/level_up
