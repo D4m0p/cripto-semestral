@@ -85,9 +85,9 @@ cp -r frontend/* level_up/
 docker compose up -d --build
 ```
 
-Rediseño visual: la portada y el tema de todo el sitio siguen la plantilla [Radio Station Landing Page](https://21st.dev/community/templates/radio-station-landing-page) de Kedhareswer Naidu (licencia MIT, copia en `frontend/LICENSE-callsign-radio-landing`). No se usó su código de React: se trasladó su lenguaje visual a las plantillas de Flask.
+Rediseño visual de la portada y del tema de todo el sitio, hecho sobre las plantillas de Flask.
 
-- Titular vertical "LEVEL UP 1337" (la red de prueba hace de frecuencia) con la tipografía de trazos de la plantilla, trasladada a JavaScript simple en `static/js/callsign.js`.
+- Titular vertical "LEVEL UP 1337" (la red de prueba hace de frecuencia) con una tipografía de trazos hecha en JavaScript simple en `static/js/callsign.js`.
 - El reto seleccionado ocupa el centro, con arte de dos tintas generado por nivel, y los 18 retos van en un riel a la derecha. Cada reto tiene un tema y una descripción breve que no revela la solución.
 - Tema día y noche, con un interruptor que recuerda la elección, y estilos comunes en `static/css/callsign.css` que reconvierten tablas, botones, avisos y preguntas frecuentes.
 - Se adapta a pantallas angostas y respeta la preferencia de movimiento reducido.
