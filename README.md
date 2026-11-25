@@ -99,6 +99,10 @@ Qué se corrigió:
 - **Red y estados.** Avisa si MetaMask no está instalado o está en otra red (con botón "Cambiar de red" a Ganache Local, chain id 1337). Tras desplegar un reto espera a que MetaMask vea el contrato antes de usarlo, lo que evita el error de datos vacíos de la primera llamada. Todo esto vive en `frontend/static/js/wallet.js`.
 - **Resaltado de código Solidity.** `solidity.js` y `yul.js` eran módulos de Node (`require`) y fallaban en el navegador, por lo que el código de los contratos no se coloreaba. Se reemplazaron por las versiones de navegador de [highlightjs-solidity](https://github.com/highlightjs/highlightjs-solidity) (licencia MIT).
 
+## Correcciones
+
+La carpeta `correcciones/` reúne el trabajo de corregir los contratos vulnerables. Empiece por [`correcciones/GUIA_CORRECCIONES.md`](correcciones/GUIA_CORRECCIONES.md): explica el proceso y, por cada nivel del 9 al 17, el principio de seguridad que se violó, una pista de qué cambiar y cómo comprobar la corrección.
+
 ## Referencias
 
 - Telefónica. *Level_Up!* https://github.com/Telefonica/level_up
