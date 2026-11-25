@@ -340,3 +340,4 @@ Validación en el contrato base (`checkFlag`): **True**
 - `capturas/02_marcador_global.jpg`: marcador global de la plataforma.
 - `capturas/03_resaltado_solidity.jpg`: página de un reto con el código del contrato resaltado como Solidity.
 - `capturas/04_aviso_jugador_registrado.jpg`: aviso de la página de registro cuando la cuenta ya es jugador.
+- `capturas/05_portada_tema_noche.jpg` y `capturas/06_portada_tema_dia.jpg`: portada rediseñada en los dos temas.

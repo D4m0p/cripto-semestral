@@ -19,14 +19,25 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Sans" rel="stylesheet" >
     <link href={{ url_for('static', filename='css/style.css') }} rel="stylesheet">
+    <link href={{ url_for('static', filename='css/callsign.css') }} rel="stylesheet">
     {% endblock %}
+    <script>
+      (function () {
+        var t = "dark";
+        try { t = localStorage.getItem("cs-theme") || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark"); } catch (e) {}
+        document.documentElement.setAttribute("data-theme", t);
+      })();
+    </script>
     {% endblock %}
   </head>
 
-  <body class="d-flex flex-column min-vh-100">
+  <body class="d-flex flex-column min-vh-100 {% block body_class %}{% endblock %}">
     {% block header %}
     <header class="d-flex flex-wrap justify-content-center py-3 mb-4 mx-4 border-bottom">
-      <h3 class=" d-flex align-items-center mb-3 mb-md-0 me-md-auto text-gradient">{ level_up! : Web3 Security WarGames }</h3>
+      <a href="/" class="cs-brand" aria-label="level_up!, inicio">
+        <span class="cs-word" data-cs-text="LEVEL UP">level_up!</span>
+        <span class="cs-brand-f">1337</span>
+      </a>
 
       <ul class="nav nav-pills">
         {% for href, id, caption, icon in navigation_bar %}
@@ -37,13 +48,14 @@
         </li>
         {% endfor %}
       </ul>
+      <button type="button" id="cs-theme" class="cs-theme" aria-pressed="true" aria-label="Cambiar entre tema día y noche"><span>Noche</span></button>
     </header>
     {% endblock %}
 
     <div class="container"><div id="lu-alert" class="mx-2" aria-live="polite"></div></div>
 
-    <main class="flex-shrink-0 m-2">
-      <div class="container text-center">
+    <main class="flex-shrink-0 {% block main_class %}m-2{% endblock %}">
+      <div class="{% block wrap_class %}container text-center{% endblock %}">
         {% block main %}{% endblock %}
       </div>
     </main>
@@ -60,6 +72,7 @@
     <script src={{ url_for('static', filename='js/jquery-3.6.1.min.js') }}></script>
     <script src={{ url_for('static', filename='js/bootstrap.bundle.min.js') }}></script>
     <script src={{ url_for('static', filename='js/ethers-5.7.2.umd.min.js') }}></script>
+    <script src={{ url_for('static', filename='js/callsign.js') }}></script>
     <script src={{ url_for('static', filename='js/wallet.js') }}></script>
     <script>
       async function Web3Prov(){

@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+{# Temas y descripciones breves de cada reto (sin revelar la solución). #}
+{% set info = {
+  "0":  {"tag": "Primer contacto", "blurb": "Conecte la billetera, abra la consola del navegador y consiga la primera flag."},
+  "1":  {"tag": "Lógica", "blurb": "Un contrato que hace preguntas. Las respuestas están a la vista."},
+  "2":  {"tag": "Propiedad", "blurb": "La propiedad tiene dueño y número secreto. Hágase con ella."},
+  "3":  {"tag": "Acceso", "blurb": "Un guardián con contraseña. ¿Quién vigila al guardián?"},
+  "4":  {"tag": "Ataque", "blurb": "El dueño firma las transferencias, y alguien más puede aprovecharlo."},
+  "5":  {"tag": "Azar", "blurb": "Una lotería con el pozo lleno. Vacíelo."},
+  "6":  {"tag": "Tokens", "blurb": "Un dispensador de tokens con un límite curioso."},
+  "7":  {"tag": "Forense", "blurb": "La flag existe, pero no la guardaron donde parece."},
+  "8":  {"tag": "Delegación", "blurb": "Código ajeno que se ejecuta con los datos del contrato."},
+  "9":  {"tag": "Finanzas", "blurb": "Un club que solo admite a quien tiene un saldo alto."},
+  "10": {"tag": "Servicio", "blurb": "Una tabla de ganadores y un contrato que tiene que pagarles."},
+  "11": {"tag": "Forense", "blurb": "Siga el rastro de las llamadas y encuentre qué se eligió."},
+  "12": {"tag": "Firmas", "blurb": "Un depósito firmado y un contrato que confía en la firma."},
+  "13": {"tag": "Azar", "blurb": "Adivine el número con la ayuda de otro contrato."},
+  "14": {"tag": "Pagos", "blurb": "Pague lo justo: ni poco ni demasiado."},
+  "15": {"tag": "Intercambio", "blurb": "Un intercambio de tokens con las reglas flojas."},
+  "16": {"tag": "Gas", "blurb": "Una suma sencilla con una condición sobre el gas."},
+  "17": {"tag": "Saldo", "blurb": "Un contrato que necesita saldo y no tiene cómo recibirlo."}
+} %}
+{% set colors = ["#ff48b0", "#00a95c", "#ff6c2f", "#ffe800", "#3255a4", "#ff665e", "#0078bf", "#ffb300"] %}
+{% block title %}Retos{% endblock %}
+{% block body_class %}cs-is-home{% endblock %}
+{% block main_class %}{% endblock %}
+{% block wrap_class %}{% endblock %}
+{% block main %}
+  {% set total = challenges.values() | sum(attribute="score") %}
+  {% set first = challenges["0"] %}
+
+  <div class="cs-home">
+    <div class="cs-mast"><span class="cs-mast-in" data-cs-mode="mast" data-cs-text="LEVEL UP" data-cs-red="1337"></span></div>
+
+    <section class="cs-feature" aria-live="polite">
+      <div class="cs-lead">
+        <div>
+          <p class="cs-intro">Plataforma de retos de seguridad para contratos inteligentes. Cada reto es un contrato real en una red de prueba: léalo, encuentre el fallo y consiga la flag.</p>
+          <p class="cs-onair"><span class="cs-dot"></span>Reto seleccionado</p>
+          <p class="cs-meta" id="cs-meta">Nivel 00 · {{ first.score }} puntos</p>
+          <p class="cs-tag" id="cs-tag">{{ info["0"].tag }}</p>
+        </div>
+        <div class="cs-art" id="cs-art"></div>
+      </div>
+
+      <div class="cs-title-wrap"><div class="cs-title" id="cs-title"></div></div>
+
+      <p class="cs-blurb" id="cs-blurb">{{ info["0"].blurb }}</p>
+
+      <div class="cs-player">
+        <a class="cs-go" id="cs-go" href="{{ first.href|e }}" aria-label="Abrir el reto seleccionado">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12-7.5z"/></svg>
+        </a>
+        <div class="cs-now">
+          <b id="cs-now">Abrir {{ first.name|replace("_", " ") }}</b>
+          <span class="cs-meta">Dificultad <span class="cs-dots" id="cs-dots"></span></span>
+        </div>
+      </div>
+    </section>
+
+    <aside class="cs-rail" aria-label="Lista de retos">
+      <div class="cs-rail-h">
+        <h2>Los {{ challenges|length }} retos</h2>
+        {% if base_address %}<span class="cs-meta" title="Contrato base: {{ base_address }}">{{ base_address[:6] }}…{{ base_address[-4:] }}</span>{% endif %}
+      </div>
+      <p class="cs-rail-sub">Elija uno para verlo y ábralo con el botón rojo.</p>
+      <ol class="cs-list">
+        {% for key, v in challenges.items() %}
+          <li>
+            <button type="button" class="cs-row" data-level="{{ key|e }}" {% if loop.first %}aria-current="true"{% endif %}>
+              <span class="n">{{ "%02d"|format(key|int) }}</span>
+              <span class="p" style="background: {{ colors[key|int % 8] }}"></span>
+              <span>
+                <span class="t">{{ info[key].tag|upper }}</span>
+                <span class="nm">{{ v.name|replace("_", " ")|e }}</span>
+                <span class="sub">{{ v.score }} puntos</span>
+              </span>
+            </button>
+          </li>
+        {% endfor %}
+      </ol>
+    </aside>
+  </div>
+
+  <div class="cs-stats">
+    <div class="cs-stat"><div class="big" data-cs-text="{{ challenges|length }}"></div><p>retos para resolver</p></div>
+    <div class="cs-stat"><div class="big" data-cs-text="{{ total }}"></div><p>puntos en juego</p></div>
+    <div class="cs-stat"><div class="big cs-red" data-cs-text="1337"></div><p>es la red de prueba (Ganache). Aquí no se arriesga dinero real.</p></div>
+  </div>
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script>
+    let base_add = '{{base_address}}';
+    let abi = JSON.parse('{{abi_base | tojson | safe}}');
+
+    // Contrato base y dirección del jugador, disponibles en la consola del navegador.
+    async function Web3Prov(){
+      const conn = await LU.connect();
+      if (!conn) return;
+      window.base = new ethers.Contract(base_add, abi, conn.provider.getSigner(0));
+      window.player = conn.address;
+    }
+
+    function help(){
+      console.table({player:'Devuelve la dirección pública del jugador',
+                     base:'Acceso a contrato base del juego'});
+    }
+
+    $(Web3Prov());
+
+    // Vista previa del reto: se actualiza al elegir una fila de la lista.
+    const LV = {{ challenges | tojson }};
+    const INFO = {{ info | tojson }};
+    const pad = (n) => String(n).padStart(2, "0");
+
+    function select(key) {
+      const v = LV[key], i = INFO[key];
+      const $ = (id) => document.getElementById(id);
+      $("cs-art").innerHTML = CS.art(Number(key));
+      const title = $("cs-title");
+      title.setAttribute("data-cs-text", v.name);
+      title.setAttribute("data-cs-mode", "block");
+      title.setAttribute("data-cs-max", "800");
+      CS.render(title.parentNode);
+      const svg = title.querySelector("svg");
+      if (svg) svg.style.width = Math.round(svg.viewBox.baseVal.width * 0.46) + "px";
+      $("cs-meta").textContent = "Nivel " + pad(key) + " · " + v.score + " puntos";
+      $("cs-tag").textContent = i.tag;
+      $("cs-blurb").textContent = i.blurb;
+      $("cs-go").href = v.href;
+      $("cs-now").textContent = "Abrir " + v.name.replace(/_/g, " ");
+      $("cs-dots").innerHTML = Array.from({ length: 5 }, (_, k) => '<i class="' + (k < v.difficulty ? "on" : "") + '"></i>').join("");
+      document.querySelectorAll(".cs-row").forEach((r) => {
+        if (r.dataset.level === key) r.setAttribute("aria-current", "true"); else r.removeAttribute("aria-current");
+      });
+    }
+
+    document.querySelectorAll(".cs-row").forEach((r) =>
+      r.addEventListener("click", () => select(r.dataset.level)));
+    document.addEventListener("DOMContentLoaded", () => select("0"));
+  </script>
+{% endblock %}
