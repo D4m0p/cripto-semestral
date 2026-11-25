@@ -1,0 +1,60 @@
+{% extends "layout.html" %}
+{% block title %}Delete player{% endblock %}
+{% block main %}
+  <div class="m-2 p-2 justify-content-center">
+    <h3 class="text-gradient-2 m-2">Eliminar jugador</h3>
+    <p id="estado">Conectando con MetaMask...</p>
+    <a class="btn btn-secondary" href="/">Volver</a>
+  </div>
+{% endblock %}
+{% block scripts %}
+  {{ super() }}
+  <script>
+    function estado(texto) {
+      document.getElementById("estado").textContent = texto;
+    }
+
+    async function deletePlayer() {
+        estado("Conectando con MetaMask...");
+        const conn = await LU.connect();
+        if (!conn || conn.wrongChain) {
+            estado("No se pudo continuar. Revise el aviso de arriba.");
+            return;
+        }
+        const address = conn.address;
+        const base_address = '{{base_address}}';
+        const base_abi = JSON.parse('{{abi_base | tojson | safe}}');
+        const c = new ethers.Contract(base_address, base_abi, conn.provider.getSigner());
+        window.contr = c;
+        const retry = [{ label: "Reintentar", onClick: deletePlayer }];
+
+        try {
+            const registrado = await c.existPlayer(address);
+            if (!registrado) {
+                LU.alert("info", "Esta cuenta no está registrada como jugador.", [
+                    { label: "Ver mi perfil", onClick: function () { window.location.href = "/player?user_address=" + address; } }
+                ]);
+                estado("No hay nada que eliminar.");
+                return;
+            }
+            estado("Confirme la transacción en MetaMask...");
+            const tx = await c.delPlayer();
+            estado("Esperando la confirmación en la cadena...");
+            await tx.wait();
+            console.info("Eliminado!");
+            LU.alert("success", "Jugador eliminado.");
+            estado("Listo. Redirigiendo...");
+            setTimeout(function () {
+                window.location.href = "/player?user_address=" + address;
+            }, 1200);
+        }
+        catch (error) {
+            console.error(error);
+            LU.alert("danger", LU.friendlyError(error), retry);
+            estado("La operación no se completó.");
+        }
+    }
+
+    $(deletePlayer());
+  </script>
+{% endblock %}

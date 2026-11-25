@@ -76,6 +76,22 @@ docker exec <contenedor> python /tmp/solve.py        # todos los niveles, o: sol
 
 El detalle de cada uno, con hashes de transacción y flags, está en [`evidencia/evidencia.md`](evidencia/evidencia.md).
 
+## Mejoras al front
+
+La carpeta `frontend/` contiene los archivos modificados de Level Up, con la misma ruta que tienen dentro del proyecto. Para aplicarlos:
+
+```bash
+cp -r frontend/* level_up/
+docker compose up -d --build
+```
+
+Qué se corrigió:
+
+- **Errores sin mensaje.** Al registrar o eliminar un jugador, la página se quedaba en "Creating player..." sin avisar si MetaMask rechazaba la operación (error 4100) o la transacción fallaba. Ahora muestra cada paso, explica el error en español y ofrece "Reintentar". Si la cuenta ya está registrada, lo avisa en vez de intentar de nuevo.
+- **Página Player sin dirección.** `/player` devolvía error 500 al abrirse sin `?user_address=`. Ahora conecta la billetera y redirige a la página con la dirección, o muestra el botón "Conectar MetaMask".
+- **Red y estados.** Avisa si MetaMask no está instalado o está en otra red (con botón "Cambiar de red" a Ganache Local, chain id 1337). Tras desplegar un reto espera a que MetaMask vea el contrato antes de usarlo, lo que evita el error de datos vacíos de la primera llamada. Todo esto vive en `frontend/static/js/wallet.js`.
+- **Resaltado de código Solidity.** `solidity.js` y `yul.js` eran módulos de Node (`require`) y fallaban en el navegador, por lo que el código de los contratos no se coloreaba. Se reemplazaron por las versiones de navegador de [highlightjs-solidity](https://github.com/highlightjs/highlightjs-solidity) (licencia MIT).
+
 ## Referencias
 
 - Telefónica. *Level_Up!* https://github.com/Telefonica/level_up

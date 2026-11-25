@@ -338,3 +338,5 @@ Validación en el contrato base (`checkFlag`): **True**
 
 - `capturas/01_player_2450_puntos.jpg`: página Player del jugador de prueba, con 2450 puntos y las 18 instancias con flag.
 - `capturas/02_marcador_global.jpg`: marcador global de la plataforma.
+- `capturas/03_resaltado_solidity.jpg`: página de un reto con el código del contrato resaltado como Solidity.
+- `capturas/04_aviso_jugador_registrado.jpg`: aviso de la página de registro cuando la cuenta ya es jugador.
