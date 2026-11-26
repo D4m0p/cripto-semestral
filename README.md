@@ -3,7 +3,7 @@
 Universidad Tecnológica de Panamá, Facultad de Ingeniería de Sistemas Computacionales.
 Asignatura: Criptografía. Profesor: Mgtr. José Moreno.
 
-Este repositorio documenta el despliegue de la plataforma [Level Up](https://github.com/Telefonica/level_up) (Telefónica), la resolución de sus 18 retos y la evidencia de cada uno.
+Este repositorio documenta el despliegue de la plataforma [Level Up](https://github.com/Telefonica/level_up) (Telefónica), la resolución de los retos del grupo y la evidencia de cada uno.
 
 ## Retos del grupo
 
@@ -18,7 +18,7 @@ Cada integrante desarrolla tres retos: los explica en el informe y en la sustent
 | Integrante 2 | 10 | Deny_To_Me | 200 | Denegación de servicio por un receptor que revierte |
 | Integrante 2 | 13 | Guess_my_number | 200 | `delegatecall` abierto y número guardado en claro |
 
-En total suman 1175 de los 2450 puntos de la plataforma. Los otros doce niveles también quedaron resueltos; su detalle está en `evidencia/`.
+En total suman 1175 puntos. El detalle de cada reto, con hashes de transacción y flags, está en [`evidencia/evidencia.md`](evidencia/evidencia.md).
 
 ## Estructura
 
@@ -65,31 +65,6 @@ docker cp player.key <contenedor>:/tmp/player.key   # llave de prueba, 0x + 64 h
 docker exec <contenedor> python /tmp/fund.py
 docker exec <contenedor> python /tmp/solve.py        # todos los niveles, o: solve.py 4 9 12
 ```
-
-## Resumen de fallos por nivel
-
-| Nivel | Reto | Fallo |
-|---|---|---|
-| 0 | Interact | Tutorial |
-| 1 | Questions | Lógica deducible desde el contrato |
-| 2 | Ownership | Dato `private` legible con `getStorageAt` |
-| 3 | Safeguarding | Control de acceso defectuoso |
-| 4 | Origin | `tx.origin` en lugar de `msg.sender` |
-| 5 | Relottery | Dato `private` legible |
-| 6 | Overworld | Desbordamiento aritmético (Solidity 0.6) |
-| 7 | Blockchain_Tour | Dato en el calldata de una transacción |
-| 8 | Snippet_Delegated | `delegatecall` con almacenamiento compartido |
-| 9 | Rich_Club | Préstamo relámpago (flash loan) |
-| 10 | Deny_To_Me | Denegación de servicio por receptor que revierte |
-| 11 | Forensic_Ouch | Dato `private` y análisis forense |
-| 12 | Replay_Me | Reutilización de firma |
-| 13 | Guess_my_number | `delegatecall` y dato `private` |
-| 14 | Pay_me | Control de acceso por pago |
-| 15 | Dex_knowledge | Acuñación de tokens sin restricción |
-| 16 | Gas_knowledge | Dependencia del precio de gas |
-| 17 | Send_to_me | Envío forzado de ETH con `selfdestruct` |
-
-El detalle de cada uno, con hashes de transacción y flags, está en [`evidencia/evidencia.md`](evidencia/evidencia.md).
 
 ## Mejoras al front
 
