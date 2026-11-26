@@ -103,7 +103,7 @@ docker compose up -d --build
 Rediseño visual de la portada y del tema de todo el sitio, hecho sobre las plantillas de Flask.
 
 - Titular vertical "LEVEL UP 1337" (la red de prueba hace de frecuencia) con una tipografía de trazos hecha en JavaScript simple en `static/js/callsign.js`.
-- El reto seleccionado ocupa el centro, con arte de dos tintas generado por nivel, y el riel de la derecha muestra los seis retos del grupo, con el integrante a cargo; los otros doce quedan en una lista plegable. Cada reto tiene un tema y una descripción breve que no revela la solución.
+- El reto seleccionado ocupa el centro, con arte de dos tintas generado por nivel, y el riel de la derecha muestra los seis retos del grupo, con el integrante a cargo. Cada reto tiene un tema y una descripción breve que no revela la solución.
 - Tema día y noche, con un interruptor que recuerda la elección, y estilos comunes en `static/css/callsign.css` que reconvierten tablas, botones, avisos y preguntas frecuentes.
 - Se adapta a pantallas angostas y respeta la preferencia de movimiento reducido.
 

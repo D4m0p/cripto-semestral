@@ -246,9 +246,3 @@ body.cs-is-home main { padding: 0; }
   * { transition: none !important; animation: none !important; }
 }
 
-/* Retos que no son del grupo: lista plegable bajo la principal. */
-.cs-more { margin-top: 20px; border-top: 1px solid var(--cs-line); padding-top: 14px; }
-.cs-more > summary { cursor: pointer; font-size: 14px; font-weight: 600; color: var(--cs-muted); padding: 6px 0; }
-.cs-more > summary:hover { color: var(--cs-ink); }
-.cs-more > summary:focus-visible { outline: 2px solid var(--cs-tally); outline-offset: 2px; }
-.cs-more[open] > summary { margin-bottom: 12px; }
