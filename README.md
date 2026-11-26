@@ -5,6 +5,21 @@ Asignatura: Criptografía. Profesor: Mgtr. José Moreno.
 
 Este repositorio documenta el despliegue de la plataforma [Level Up](https://github.com/Telefonica/level_up) (Telefónica), la resolución de sus 18 retos y la evidencia de cada uno.
 
+## Retos del grupo
+
+Cada integrante desarrolla tres retos: los explica en el informe y en la sustentación, y corrige su contrato.
+
+| Integrante | Nivel | Reto | Puntos | Fallo |
+|---|---|---|---|---|
+| Integrante 1 | 0 | Interact | 25 | Reto introductorio, sin vulnerabilidad |
+| Integrante 1 | 5 | Relottery | 250 | Dato `private` legible en la cadena |
+| Integrante 1 | 12 | Replay_Me | 250 | Reutilización de una firma |
+| Integrante 2 | 9 | Rich_Club | 250 | Préstamo relámpago (*flash loan*) |
+| Integrante 2 | 10 | Deny_To_Me | 200 | Denegación de servicio por un receptor que revierte |
+| Integrante 2 | 13 | Guess_my_number | 200 | `delegatecall` abierto y número guardado en claro |
+
+En total suman 1175 de los 2450 puntos de la plataforma. Los otros doce niveles también quedaron resueltos; su detalle está en `evidencia/`.
+
 ## Estructura
 
 | Carpeta | Contenido |
@@ -88,7 +103,7 @@ docker compose up -d --build
 Rediseño visual de la portada y del tema de todo el sitio, hecho sobre las plantillas de Flask.
 
 - Titular vertical "LEVEL UP 1337" (la red de prueba hace de frecuencia) con una tipografía de trazos hecha en JavaScript simple en `static/js/callsign.js`.
-- El reto seleccionado ocupa el centro, con arte de dos tintas generado por nivel, y los 18 retos van en un riel a la derecha. Cada reto tiene un tema y una descripción breve que no revela la solución.
+- El reto seleccionado ocupa el centro, con arte de dos tintas generado por nivel, y el riel de la derecha muestra los seis retos del grupo, con el integrante a cargo; los otros doce quedan en una lista plegable. Cada reto tiene un tema y una descripción breve que no revela la solución.
 - Tema día y noche, con un interruptor que recuerda la elección, y estilos comunes en `static/css/callsign.css` que reconvierten tablas, botones, avisos y preguntas frecuentes.
 - Se adapta a pantallas angostas y respeta la preferencia de movimiento reducido.
 
@@ -101,7 +116,7 @@ Qué se corrigió:
 
 ## Correcciones
 
-La carpeta `correcciones/` reúne el trabajo de corregir los contratos vulnerables. Empiece por [`correcciones/GUIA_CORRECCIONES.md`](correcciones/GUIA_CORRECCIONES.md): explica el proceso y, por cada nivel del 9 al 17, el principio de seguridad que se violó, una pista de qué cambiar y cómo comprobar la corrección.
+La carpeta `correcciones/` reúne el trabajo de corregir los contratos vulnerables. Empiece por [`correcciones/GUIA_CORRECCIONES.md`](correcciones/GUIA_CORRECCIONES.md): explica el proceso y, por cada nivel de la integrante 2 (9, 10 y 13), el principio de seguridad que se violó, una pista de qué cambiar y cómo comprobar la corrección.
 
 ## Informe
 

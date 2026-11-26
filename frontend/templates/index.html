@@ -20,6 +20,9 @@
   "16": {"tag": "Gas", "blurb": "Una suma sencilla con una condición sobre el gas."},
   "17": {"tag": "Saldo", "blurb": "Un contrato que necesita saldo y no tiene cómo recibirlo."}
 } %}
+{# Retos que desarrolla el grupo: tres por integrante. #}
+{% set grupo = [("0", 1), ("5", 1), ("12", 1), ("9", 2), ("10", 2), ("13", 2)] %}
+{% set grupo_keys = grupo | map("first") | list %}
 {% set colors = ["#ff48b0", "#00a95c", "#ff6c2f", "#ffe800", "#3255a4", "#ff665e", "#0078bf", "#ffb300"] %}
 {% block title %}Retos{% endblock %}
 {% block body_class %}cs-is-home{% endblock %}
@@ -28,6 +31,8 @@
 {% block main %}
   {% set total = challenges.values() | sum(attribute="score") %}
   {% set first = challenges["0"] %}
+  {% set ns = namespace(pts=0) %}
+  {% for k, _ in grupo %}{% set ns.pts = ns.pts + challenges[k].score %}{% endfor %}
 
   <div class="cs-home">
     <div class="cs-mast"><span class="cs-mast-in" data-cs-mode="mast" data-cs-text="LEVEL UP" data-cs-red="1337"></span></div>
@@ -60,12 +65,12 @@
 
     <aside class="cs-rail" aria-label="Lista de retos">
       <div class="cs-rail-h">
-        <h2>Los {{ challenges|length }} retos</h2>
+        <h2>Retos del grupo</h2>
         {% if base_address %}<span class="cs-meta" title="Contrato base: {{ base_address }}">{{ base_address[:6] }}…{{ base_address[-4:] }}</span>{% endif %}
       </div>
-      <p class="cs-rail-sub">Elija uno para verlo y ábralo con el botón rojo.</p>
+      <p class="cs-rail-sub">Los seis que desarrollamos, tres por integrante. Elija uno para verlo y ábralo con el botón rojo.</p>
       <ol class="cs-list">
-        {% for key, v in challenges.items() %}
+        {% for key, quien in grupo %}{% set v = challenges[key] %}
           <li>
             <button type="button" class="cs-row" data-level="{{ key|e }}" {% if loop.first %}aria-current="true"{% endif %}>
               <span class="n">{{ "%02d"|format(key|int) }}</span>
@@ -73,18 +78,37 @@
               <span>
                 <span class="t">{{ info[key].tag|upper }}</span>
                 <span class="nm">{{ v.name|replace("_", " ")|e }}</span>
-                <span class="sub">{{ v.score }} puntos</span>
+                <span class="sub">{{ v.score }} puntos · integrante {{ quien }}</span>
               </span>
             </button>
           </li>
         {% endfor %}
       </ol>
+
+      <details class="cs-more">
+        <summary>Los otros {{ challenges|length - grupo|length }} retos de la plataforma</summary>
+        <ol class="cs-list">
+          {% for key, v in challenges.items() if key not in grupo_keys %}
+            <li>
+              <button type="button" class="cs-row" data-level="{{ key|e }}">
+                <span class="n">{{ "%02d"|format(key|int) }}</span>
+                <span class="p" style="background: {{ colors[key|int % 8] }}"></span>
+                <span>
+                  <span class="t">{{ info[key].tag|upper }}</span>
+                  <span class="nm">{{ v.name|replace("_", " ")|e }}</span>
+                  <span class="sub">{{ v.score }} puntos</span>
+                </span>
+              </button>
+            </li>
+          {% endfor %}
+        </ol>
+      </details>
     </aside>
   </div>
 
   <div class="cs-stats">
-    <div class="cs-stat"><div class="big" data-cs-text="{{ challenges|length }}"></div><p>retos para resolver</p></div>
-    <div class="cs-stat"><div class="big" data-cs-text="{{ total }}"></div><p>puntos en juego</p></div>
+    <div class="cs-stat"><div class="big" data-cs-text="{{ grupo|length }}"></div><p>retos del grupo, de los {{ challenges|length }} de la plataforma</p></div>
+    <div class="cs-stat"><div class="big" data-cs-text="{{ ns.pts }}"></div><p>puntos de nuestros retos, de {{ total }} en total</p></div>
     <div class="cs-stat"><div class="big cs-red" data-cs-text="1337"></div><p>es la red de prueba (Ganache). Aquí no se arriesga dinero real.</p></div>
   </div>
 {% endblock %}
