@@ -32,18 +32,12 @@ La plataforma despliega siempre el contrato original; por eso las versiones corr
 - **Pista:** guarde lo que se debe a cada dirección y deje que cada una lo retire por su cuenta.
 - **Cómo comprobar:** el flujo principal ya no se bloquea cuando una dirección rechaza ETH.
 
-
-
 ## Nivel 13: Guess_my_number
 
 - **Principio violado:** dos fallos distintos. Un `delegatecall` hacia código que el usuario puede invocar libremente, y un secreto guardado en claro.
 - **Qué debe cambiar:** quitar la delegación abierta (o limitarla a funciones y destinos fijos) y no guardar el número en claro.
 - **Pista:** repase por qué `delegatecall` usa el almacenamiento del contrato que llama y qué implica para el orden de las variables.
 - **Cómo comprobar:** no se puede cambiar `owner` mediante llamadas delegadas.
-
-
-
-
 
 ## Para la sustentación
 
