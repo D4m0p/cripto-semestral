@@ -93,6 +93,6 @@ Cada integrante explica sus niveles. Una buena explicación responde, en este or
 ## Referencias
 
 - Solidity Docs: [Security Considerations](https://docs.soliditylang.org/en/latest/security-considerations.html).
-- SWC Registry: [Smart Contract Weakness Classification](https://swcregistry.io/).
-- OpenZeppelin Contracts: [Access Control](https://docs.openzeppelin.com/contracts/5.x/access-control) y [PullPayment](https://docs.openzeppelin.com/contracts/5.x/api/security#PullPayment).
+- SWC Registry: [Smart Contract Weakness Classification](https://swcregistry.io/). Ya no se actualiza, pero sirve para nombrar cada falla con su código.
+- OpenZeppelin Contracts: [Access Control](https://docs.openzeppelin.com/contracts/5.x/access-control) y [PullPayment](https://docs.openzeppelin.com/contracts/4.x/api/security#PullPayment) (versión 4.x; en la 5.x ya no existe).
 - Consensys: [Smart Contract Best Practices](https://consensysdiligence.github.io/smart-contract-best-practices/).
